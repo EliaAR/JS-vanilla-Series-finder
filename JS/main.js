@@ -82,11 +82,16 @@ function clickSerie(event, index) {
   let liElement = event.currentTarget;
   liElement.classList.toggle("lisSerie");
   liElement.classList.toggle("liSelectedSerie");
+  saveFavorites(index);
+  printFavoriteSeries();
+}
+
+function saveFavorites(index) {
   arrayFavoriteSeries.push({
     name: `${arraySeries[index].name}`,
     image: `${arraySeries[index].image}`,
   });
-  printFavoriteSeries();
+  localStorage.setItem("favoriteSeries", JSON.stringify(arrayFavoriteSeries));
 }
 
 function printFavoriteSeries() {
@@ -96,5 +101,4 @@ function printFavoriteSeries() {
     contentTwo += `<li class="lisSerie"><img class="imgSerie" src="${serie.image}" c/> ${serie.name}</li>`;
   });
   favoritesContainer.innerHTML = `<ul> ${contentTwo}</ul>`;
-  localStorage.setItem("favoriteSeries", JSON.stringify(arrayFavoriteSeries));
 }
