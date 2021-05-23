@@ -13,7 +13,7 @@ if (localStorage.getItem("favoriteSeries")) {
   printFavoriteSeries();
 }
 
-function pushContent(serie) {
+function pushSeries(serie) {
   if (serie.show.image) {
     arraySeries.push({
       name: `${serie.show.name}`,
@@ -27,7 +27,7 @@ function pushContent(serie) {
   }
 }
 
-function printContent(evt) {
+function printSeries(evt) {
   let content = "";
   arraySeries = [];
   evt.forEach(function (serie) {
@@ -36,18 +36,18 @@ function printContent(evt) {
     } else {
       content += `<li class="js-lisSerie lisSerie"><img class="imgSerie" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" /> ${serie.show.name}</li>`;
     }
-    pushContent(serie);
+    pushSeries(serie);
   });
   searchContainer.innerHTML = `<ul> ${content}</ul>`;
   changeLi();
 }
 
-function result() {
+function callToAPI() {
   fetch(`http://api.tvmaze.com/search/shows?q=${inputText.value}`)
     .then((response) => response.json())
     .then((data) => {
       let content = "";
-      printContent(data);
+      printSeries(data);
       APIResults.push({
         searchValue: inputText.value,
         results: data,
@@ -62,9 +62,9 @@ function comprobation(evt) {
     (item) => item.searchValue === inputText.value
   );
   if (!cachedResult) {
-    result();
+    callToAPI();
   } else {
-    printContent(cachedResult.results);
+    printSeries(cachedResult.results);
   }
 }
 button.addEventListener("click", comprobation);
@@ -87,11 +87,16 @@ function clickSerie(event, index) {
 }
 
 function saveFavorites(index) {
-  arrayFavoriteSeries.push({
-    name: `${arraySeries[index].name}`,
-    image: `${arraySeries[index].image}`,
-  });
-  localStorage.setItem("favoriteSeries", JSON.stringify(arrayFavoriteSeries));
+  let favoritesExists = arrayFavoriteSeries.find(
+    (item) => item.name === arraySeries[index].name
+  );
+  if (!favoritesExists) {
+    arrayFavoriteSeries.push({
+      name: `${arraySeries[index].name}`,
+      image: `${arraySeries[index].image}`,
+    });
+    localStorage.setItem("favoriteSeries", JSON.stringify(arrayFavoriteSeries));
+  }
 }
 
 function printFavoriteSeries() {
