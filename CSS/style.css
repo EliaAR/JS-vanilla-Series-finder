@@ -1,0 +1,24 @@
+.lisSerie {
+  list-style: none;
+  background-color: purple;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 350px;
+  width: 250px;
+}
+.imgSerie {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.liSelectedSerie {
+  list-style: none;
+  background-color: seagreen;
+  color: purple;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 350px;
+  width: 250px;
+}
+.favoritesContainer {
+  border: 2px solid black;
+}
