@@ -39,7 +39,7 @@ function printSeries(evt) {
     pushSeries(serie);
   });
   searchContainer.innerHTML = `<ul> ${content}</ul>`;
-  changeLi();
+  registerClickSeries();
 }
 
 function callToAPI() {
@@ -56,7 +56,7 @@ function callToAPI() {
     });
 }
 
-function comprobation(evt) {
+function handleFetchData(evt) {
   evt.preventDefault();
   let cachedResult = APIResults.find(
     (item) => item.searchValue === inputText.value
@@ -67,9 +67,9 @@ function comprobation(evt) {
     printSeries(cachedResult.results);
   }
 }
-button.addEventListener("click", comprobation);
+button.addEventListener("click", handleFetchData);
 
-function changeLi() {
+function registerClickSeries() {
   let lisSeries = document.querySelectorAll(".js-lisSerie");
   lisSeries.forEach(function (liSerie, index) {
     liSerie.addEventListener("click", function (event) {
