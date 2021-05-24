@@ -33,7 +33,7 @@ function printSeries(evt) {
   arraySeries = [];
   evt.forEach(function (serie) {
     if (serie.show.image) {
-      content += `<li class="js-lisSerie lisSerie"><img class="imgSerie" src="${serie.show.image.medium}" c/> ${serie.show.name}</li>`;
+      content += `<li class="js-lisSerie lisSerie"><img class="imgSerie" src="${serie.show.image.medium}"/> <h4>${serie.show.name}</h4></li>`;
     } else {
       content += `<li class="js-lisSerie lisSerie"><img class="imgSerie" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" /> ${serie.show.name}</li>`;
     }
@@ -105,9 +105,9 @@ function printFavoriteSeries() {
   let favoritesContainer = document.querySelector(".js-favoritesList");
   let contentTwo = "";
   arrayFavoriteSeries.forEach(function (serie) {
-    contentTwo += `<li class="lisSerie js-liFavorite"><button class="js-deleteOne">X</button><img class="imgSerie" src="${serie.image}" c/> ${serie.name}</li>`;
+    contentTwo += `<li class="lisFavoritesSerie js-liFavorite"><button class="js-deleteOne">X</button><img class="imgSerie" src="${serie.image}" /> <h4>${serie.name}</h4></li>`;
   });
-  favoritesContainer.innerHTML = `<ul> ${contentTwo}</ul>`;
+  favoritesContainer.innerHTML = `<ul class="ulFavoriteSeries"> ${contentTwo}</ul>`;
 }
 
 function resetButton() {

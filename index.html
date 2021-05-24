@@ -8,19 +8,29 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
-    <section>
-      <h1 class="title">Buscador de series</h1>
-      <form method="get">
-        <input type="text" name="" id="" class="inputText js-inputText" />
-        <button class="js-buttonSearch">Buscar</button>
-      </form>
-    </section>
-    <section class="favoritesContainer">
-      <h2 class="title">Mis series favoritas</h2>
-      <div class="js-favoritesList"></div>
-      <button class="js-resetFavorites">Reset</button>
-    </section>
-    <section class="searchContainer js-searchContainer"></section>
+    <header>
+      <h1 class="title">El buscador de series</h1>
+    </header>
+    <main>
+      <section>
+        <form method="get">
+          <input type="text" name="" id="" class="inputText js-inputText" />
+          <button class="js-buttonSearch">Buscar</button>
+        </form>
+      </section>
+      <div class="displayContainer">
+        <section class="favoritesContainer">
+          <h2 class="titleFavorites">Mis series favoritas</h2>
+          <div class="js-favoritesList"></div>
+          <button class="js-resetFavorites">Reset</button>
+        </section>
+        <section class="searchContainer js-searchContainer"></section>
+      </div>
+    </main>
+    <footer>
+      <small>@copy 2021</small>
+      <h3>EBDS</h3>
+    </footer>
     <script src="./JS/main.js"></script>
   </body>
 </html>
