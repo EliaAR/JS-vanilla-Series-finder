@@ -43,7 +43,7 @@ function printSeries(evt) {
 }
 
 function callToAPI() {
-  fetch(`http://api.tvmaze.com/search/shows?q=${inputText.value}`)
+  fetch(`//api.tvmaze.com/search/shows?q=${inputText.value}`)
     .then((response) => response.json())
     .then((data) => {
       let content = "";
