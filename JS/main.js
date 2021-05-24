@@ -105,7 +105,7 @@ function printFavoriteSeries() {
   let favoritesContainer = document.querySelector(".js-favoritesList");
   let contentTwo = "";
   arrayFavoriteSeries.forEach(function (serie) {
-    contentTwo += `<li class="lisFavoritesSerie js-liFavorite"><button class="js-deleteOne">X</button><img class="imgSerie" src="${serie.image}" /> <h4>${serie.name}</h4></li>`;
+    contentTwo += `<li class="lisFavoritesSerie js-liFavorite"><button class="js-deleteOne buttonDeleteFavorites">X</button><img class="imgSerie" src="${serie.image}" /> <h4 class="titleSerieFavorite">${serie.name}</h4></li>`;
   });
   favoritesContainer.innerHTML = `<ul class="ulFavoriteSeries"> ${contentTwo}</ul>`;
 }

@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buscador de series</title>
+    <link rel="stylesheet" href="./CSS/reset.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
-    <header>
+    <header class="headerContainer">
       <h1 class="title">El buscador de series</h1>
     </header>
-    <main>
-      <section>
+    <main class="mainContainer">
+      <section class="formContainer">
         <form method="get">
           <input type="text" name="" id="" class="inputText js-inputText" />
           <button class="js-buttonSearch">Buscar</button>
@@ -21,15 +22,15 @@
       <div class="displayContainer">
         <section class="favoritesContainer">
           <h2 class="titleFavorites">Mis series favoritas</h2>
-          <div class="js-favoritesList"></div>
-          <button class="js-resetFavorites">Reset</button>
+          <div class="js-favoritesList favoriteList"></div>
+          <button class="js-resetFavorites resetFavorites">Reset</button>
         </section>
         <section class="searchContainer js-searchContainer"></section>
       </div>
     </main>
-    <footer>
-      <small>@copy 2021</small>
+    <footer class="footerContainer">
       <h3>EBDS</h3>
+      <small>@copy 2021</small>
     </footer>
     <script src="./JS/main.js"></script>
   </body>
