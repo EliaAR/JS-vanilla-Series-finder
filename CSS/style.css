@@ -1,3 +1,7 @@
+.body {
+  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/herringbone.png");
+}
+
 .headerContainer {
   display: flex;
   justify-content: center;
@@ -12,13 +16,12 @@
 
 .titleHeader {
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .mainContainer {
   min-height: 80vh;
-  background-color: #fffdfd;
 }
 
 .formContainer {
@@ -53,15 +56,8 @@
 }
 
 .titleFavorites {
-  display: inline;
-  margin-right: 10px;
-  margin-left: 10px;
-  font-size: 15px;
-}
-
-.favoriteList {
-  display: grid;
-  grid-template-columns: 1fr;
+  margin-left: 8px;
+  font-size: 0.9rem;
 }
 
 .lisFavoritesSerie {
@@ -69,7 +65,6 @@
   flex-direction: column;
   list-style: none;
   margin: 20px 18px 25px 18px;
-  height: 120px;
 }
 
 .buttonDeleteFavorites {
@@ -84,21 +79,19 @@
 .imgFavoriteSeries {
   display: block;
   width: 100px;
-  padding-left: 20px;
   padding-top: 10px;
 }
 
 .titleSerieFavorite {
   display: block;
-  font-size: 12px;
-  align-self: center;
+  font-size: 0.8rem;
+  text-align: center;
   margin-top: 2px;
 }
 
 .buttonResetFavorites {
   height: 20px;
   width: 45px;
-  margin-top: 10px;
   margin-left: 18px;
   margin-bottom: 20px;
   background-color: #d8bec4;
@@ -107,12 +100,12 @@
 
 .searchContainer {
   margin-left: 15px;
+  margin-right: 15px;
 }
 
-.ulContainerSeries {
-  display: grid;
-  grid-template-columns: 150px;
-  grid-template-rows: auto;
+.titleList {
+  margin-left: 14px;
+  font-size: 0.9rem;
 }
 
 .lisSerie {
@@ -146,7 +139,7 @@
 }
 
 .titleSeries {
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .footerContainer {
@@ -164,16 +157,85 @@
 }
 
 @media (min-width: 768px) {
-  .lisSerie {
-    height: 350px;
-    width: 250px;
+  .titleHeader {
+    font-size: 2rem;
   }
-  .liSelectedSerie {
-    height: 350px;
+  .inputText {
+    height: 25px;
+    width: 180px;
+  }
+  .favoritesContainer {
     width: 250px;
   }
   .lisFavoritesSerie {
-    height: 350px;
-    width: 250px;
+    width: 150px;
+    margin-left: 50px;
+  }
+  .titleFavorites {
+    font-size: 1.5rem;
+  }
+  .buttonDeleteFavorites {
+    font-size: 12px;
+  }
+  .imgFavoriteSeries {
+    width: 150px;
+  }
+  .buttonResetFavorites {
+    height: 25px;
+    width: 60px;
+  }
+  .searchContainer {
+    margin-left: 65px;
+  }
+  .ulContainerSeries {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+  }
+  .titleList {
+    margin-left: 0;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .titleFooter {
+    font-size: 1.5rem;
+  }
+  .copy {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inputText {
+    width: 300px;
+  }
+  .titleFavorites {
+    font-size: 25px;
+    text-align: center;
+  }
+  .favoritesContainer {
+    width: 550px;
+  }
+  .ulFavoriteSeries {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .lisFavoritesSerie {
+    width: 200px;
+    margin-left: 0;
+    margin-right: 0;
+    justify-self: center;
+  }
+  .imgFavoriteSeries {
+    width: 200px;
+  }
+  .searchContainer {
+    margin-left: 180px;
+  }
+  .ulContainerSeries {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .imgSeries {
+    width: 300px;
   }
 }
