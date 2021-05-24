@@ -2,7 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  border-bottom: 1px solid black;
+  height: calc(10vh - 1px);
+  color: rgba(255, 255, 255, 0.3);
+  background: #865964;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    5px 5px 15px 5px rgb(0 0 0 / 0%);
 }
 
 .titleHeader {
@@ -12,15 +17,28 @@
 }
 
 .mainContainer {
-  height: 80vh;
+  min-height: 80vh;
+  background-color: #fffdfd;
 }
 
 .formContainer {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.inpuText {
-  width: ;
+.inputText {
+  background: rgb(230, 223, 215);
+  border-radius: 5px;
+  width: 145px;
+  margin-left: 5px;
+}
+
+.buttonSearch {
+  height: 25px;
+  width: 60px;
+  font-weight: bold;
+  background-color: #d8bec4;
+  border-radius: 5px;
 }
 
 .displayContainer {
@@ -47,6 +65,8 @@
 }
 
 .lisFavoritesSerie {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 20px 18px 25px 18px;
   height: 120px;
@@ -55,9 +75,13 @@
 .buttonDeleteFavorites {
   position: absolute;
   display: block;
+  border-radius: 40%;
+  background-color: #e7d4d9;
+  font-size: 8px;
+  padding: 3px;
 }
 
-.imgSerie {
+.imgFavoriteSeries {
   display: block;
   width: 100px;
   padding-left: 20px;
@@ -66,38 +90,63 @@
 
 .titleSerieFavorite {
   display: block;
-  text-indent: 20px;
-  font-size: 10px;
+  font-size: 12px;
+  align-self: center;
+  margin-top: 2px;
 }
 
-.resetFavorites {
+.buttonResetFavorites {
   height: 20px;
   width: 45px;
   margin-top: 10px;
   margin-left: 18px;
+  margin-bottom: 20px;
+  background-color: #d8bec4;
+  border-radius: 5px;
 }
 
 .searchContainer {
-  display: grid;
-  grid-template-columns: 1fr;
   margin-left: 15px;
+}
+
+.ulContainerSeries {
+  display: grid;
+  grid-template-columns: 150px;
+  grid-template-rows: auto;
 }
 
 .lisSerie {
   list-style: none;
-  background-color: purple;
+  background-color: #865964;
+  color: #c5da97;
   margin-top: 20px;
   margin-bottom: 25px;
-  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .liSelectedSerie {
   list-style: none;
-  background-color: seagreen;
-  color: purple;
+  background-color: #4a503d;
+  color: #dfb6c1;
   margin-top: 20px;
   margin-bottom: 25px;
-  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.imgSeries {
+  display: block;
+  width: 100px;
+  padding-top: 10px;
+}
+
+.titleSeries {
+  font-size: 15px;
 }
 
 .footerContainer {
@@ -107,9 +156,14 @@
   justify-content: space-around;
   align-items: center;
   height: calc(10vh - 1px);
+  text-shadow: #e0e0e0 1px 1px 0, 2px 2px 2px rgba(206, 89, 55, 0);
+  color: #878787;
+  background: #d8bec4;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
-@media (min-widht: 768px) {
+@media (min-width: 768px) {
   .lisSerie {
     height: 350px;
     width: 250px;

@@ -33,9 +33,9 @@ function printSeries(evt) {
   arraySeries = [];
   evt.forEach(function (serie) {
     if (serie.show.image) {
-      content += `<li class="js-lisSerie lisSerie"><img class="imgSerie" src="${serie.show.image.medium}"/> <h4>${serie.show.name}</h4></li>`;
+      content += `<li class="js-lisSerie lisSerie"><img class="imgSeries" src="${serie.show.image.medium}"/> <h4 class="titleSeries">${serie.show.name}</h4></li>`;
     } else {
-      content += `<li class="js-lisSerie lisSerie"><img class="imgSerie" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" /> ${serie.show.name}</li>`;
+      content += `<li class="js-lisSerie lisSerie"><img class="imgSeries" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" /> <h4 class="titleSeries">${serie.show.name}</h4></li>`;
     }
     pushSeries(serie);
   });
@@ -105,7 +105,7 @@ function printFavoriteSeries() {
   let favoritesContainer = document.querySelector(".js-favoritesList");
   let contentTwo = "";
   arrayFavoriteSeries.forEach(function (serie) {
-    contentTwo += `<li class="lisFavoritesSerie js-liFavorite"><button class="js-deleteOne buttonDeleteFavorites">X</button><img class="imgSerie" src="${serie.image}" /> <h4 class="titleSerieFavorite">${serie.name}</h4></li>`;
+    contentTwo += `<li class="lisFavoritesSerie js-liFavorite"><button class="js-deleteOne buttonDeleteFavorites">X</button><img class="imgFavoriteSeries" src="${serie.image}" /> <h4 class="titleSerieFavorite">${serie.name}</h4></li>`;
   });
   favoritesContainer.innerHTML = `<ul class="ulFavoriteSeries"> ${contentTwo}</ul>`;
 }
