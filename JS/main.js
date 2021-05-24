@@ -107,3 +107,13 @@ function printFavoriteSeries() {
   });
   favoritesContainer.innerHTML = `<ul> ${contentTwo}</ul>`;
 }
+
+function resetButton() {
+  let buttonReset = document.querySelector(".js-resetFavorites");
+  buttonReset.addEventListener("click", function () {
+    arrayFavoriteSeries = [];
+    localStorage.removeItem("favoriteSeries");
+    printFavoriteSeries();
+  });
+}
+resetButton();
