@@ -124,13 +124,18 @@ function addEventsToDeleteFavorite() {
   let deleteFavoriteOneByOne = document.querySelectorAll(".js-deleteOne");
   deleteFavoriteOneByOne.forEach(function (button, index) {
     button.addEventListener("click", function () {
-      arrayFavoriteSeries.splice(index, 1);
-      localStorage.setItem(
-        "favoriteSeries",
-        JSON.stringify(arrayFavoriteSeries)
-      );
-      printFavoriteSeries();
-      addEventsToDeleteFavorite();
+      clickedDeleteFav(index);
     });
   });
+}
+
+function clickedDeleteFav(index) {
+  deleteFavorite(index);
+  printFavoriteSeries();
+  addEventsToDeleteFavorite();
+}
+
+function deleteFavorite(index) {
+  arrayFavoriteSeries.splice(index, 1);
+  localStorage.setItem("favoriteSeries", JSON.stringify(arrayFavoriteSeries));
 }
