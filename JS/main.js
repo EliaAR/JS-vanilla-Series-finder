@@ -11,6 +11,7 @@ if (localStorage.getItem("APIResults")) {
 if (localStorage.getItem("favoriteSeries")) {
   arrayFavoriteSeries = JSON.parse(localStorage.getItem("favoriteSeries"));
   printFavoriteSeries();
+  addEventsToDeleteFavorite();
 }
 
 function pushSeries(serie) {
@@ -38,7 +39,7 @@ function printSeries(evt) {
     }
     pushSeries(serie);
   });
-  searchContainer.innerHTML = `<ul> ${content}</ul>`;
+  searchContainer.innerHTML = `<ul class="ulContainerSeries"> ${content}</ul>`;
   registerClickSeries();
 }
 
@@ -84,6 +85,7 @@ function clickSerie(event, index) {
   liElement.classList.toggle("liSelectedSerie");
   saveFavorites(index);
   printFavoriteSeries();
+  addEventsToDeleteFavorite();
 }
 
 function saveFavorites(index) {
@@ -103,7 +105,7 @@ function printFavoriteSeries() {
   let favoritesContainer = document.querySelector(".js-favoritesList");
   let contentTwo = "";
   arrayFavoriteSeries.forEach(function (serie) {
-    contentTwo += `<li class="lisSerie"><img class="imgSerie" src="${serie.image}" c/> ${serie.name}</li>`;
+    contentTwo += `<li class="lisSerie js-liFavorite"><button class="js-deleteOne">X</button><img class="imgSerie" src="${serie.image}" c/> ${serie.name}</li>`;
   });
   favoritesContainer.innerHTML = `<ul> ${contentTwo}</ul>`;
 }
@@ -117,3 +119,18 @@ function resetButton() {
   });
 }
 resetButton();
+
+function addEventsToDeleteFavorite() {
+  let deleteFavoriteOneByOne = document.querySelectorAll(".js-deleteOne");
+  deleteFavoriteOneByOne.forEach(function (button, index) {
+    button.addEventListener("click", function () {
+      arrayFavoriteSeries.splice(index, 1);
+      localStorage.setItem(
+        "favoriteSeries",
+        JSON.stringify(arrayFavoriteSeries)
+      );
+      printFavoriteSeries();
+      addEventsToDeleteFavorite();
+    });
+  });
+}
