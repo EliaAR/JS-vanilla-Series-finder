@@ -32,10 +32,17 @@ function printSeries(evt) {
   let content = "";
   arraySeries = [];
   evt.forEach(function (serie) {
+    let className = "";
+    let isCurrentFavorite = arrayFavoriteSeries.find(
+      (item) => item.name === serie.show.name
+    );
+    if (isCurrentFavorite) {
+      className = "liSelectedSerie";
+    }
     if (serie.show.image) {
-      content += `<li class="js-lisSerie lisSerie"><img class="imgSeries" src="${serie.show.image.medium}"/> <h4 class="titleSeries">${serie.show.name}</h4></li>`;
+      content += `<li class="js-lisSerie lisSerie ${className}"><img class="imgSeries" src="${serie.show.image.medium}"/> <h4 class="titleSeries">${serie.show.name}</h4></li>`;
     } else {
-      content += `<li class="js-lisSerie lisSerie"><img class="imgSeries" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" /> <h4 class="titleSeries">${serie.show.name}</h4></li>`;
+      content += `<li class="js-lisSerie lisSerie ${className}"><img class="imgSeries" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" /> <h4 class="titleSeries">${serie.show.name}</h4></li>`;
     }
     pushSeries(serie);
   });
@@ -81,8 +88,8 @@ function registerClickSeries() {
 
 function clickSerie(event, index) {
   let liElement = event.currentTarget;
-  liElement.classList.toggle("lisSerie");
-  liElement.classList.toggle("liSelectedSerie");
+  liElement.classList.remove("lisSerie");
+  liElement.classList.add("liSelectedSerie");
   saveFavorites(index);
   printFavoriteSeries();
   addEventsToDeleteFavorite();
