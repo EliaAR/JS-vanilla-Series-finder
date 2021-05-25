@@ -1,5 +1,6 @@
 .body {
   background: url("https://www.toptal.com/designers/subtlepatterns/patterns/herringbone.png");
+  width: 100%;
 }
 
 .headerContainer {
@@ -12,6 +13,7 @@
   background: #865964;
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
     5px 5px 15px 5px rgb(0 0 0 / 0%);
+  width: 100%;
 }
 
 .titleHeader {
@@ -45,26 +47,25 @@
 }
 
 .displayContainer {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 145px auto;
 }
 
 .favoritesContainer {
   border-right: 1px solid black;
-  display: inline;
-  width: 150px;
 }
 
 .titleFavorites {
-  margin-left: 8px;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .lisFavoritesSerie {
   display: flex;
   flex-direction: column;
   list-style: none;
-  margin: 20px 18px 25px 18px;
+  margin: 20px 18px 25px 24px;
+  width: 100px;
 }
 
 .buttonDeleteFavorites {
@@ -94,6 +95,7 @@
   width: 45px;
   margin-left: 18px;
   margin-bottom: 20px;
+  margin-top: 5px;
   background-color: #d8bec4;
   border-radius: 5px;
 }
@@ -164,6 +166,9 @@
     height: 25px;
     width: 180px;
   }
+  .displayContainer {
+    grid-template-columns: 250px auto;
+  }
   .favoritesContainer {
     width: 250px;
   }
@@ -183,9 +188,6 @@
   .buttonResetFavorites {
     height: 25px;
     width: 60px;
-  }
-  .searchContainer {
-    margin-left: 65px;
   }
   .ulContainerSeries {
     display: grid;
@@ -209,6 +211,9 @@
   .inputText {
     width: 300px;
   }
+  .displayContainer {
+    grid-template-columns: 550px auto;
+  }
   .titleFavorites {
     font-size: 25px;
     text-align: center;
@@ -229,8 +234,8 @@
   .imgFavoriteSeries {
     width: 200px;
   }
-  .searchContainer {
-    margin-left: 180px;
+  .titleSerieFavorite {
+    font-size: 1rem;
   }
   .ulContainerSeries {
     grid-template-columns: 1fr 1fr 1fr;
