@@ -2,7 +2,6 @@
   background: url("https://www.toptal.com/designers/subtlepatterns/patterns/herringbone.png");
   width: 100%;
 }
-
 .headerContainer {
   display: flex;
   justify-content: center;
@@ -15,137 +14,86 @@
     5px 5px 15px 5px rgb(0 0 0 / 0%);
   width: 100%;
 }
-
 .titleHeader {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: bold;
 }
-
 .mainContainer {
   min-height: 80vh;
 }
-
 .formContainer {
-  padding: 20px;
+  padding: 1.25rem;
   border-bottom: 1px solid rgba(197, 175, 158, 0.75);
   background-color: rgba(217, 203, 192, 0.4);
 }
-
-.formSerie {
-  display: flex;
-  flex-direction: column;
-}
-.labelInput {
-  font-size: 15px;
-  width: 230px;
-  padding-bottom: 3px;
-}
-
 .inputText {
-  background: rgb(248, 247, 245);
   border-radius: 5px;
-  width: 185px;
-  height: 25px;
-  margin-left: 5px;
+  height: 1.75rem;
+  width: 75%;
 }
-
 .buttonSearch {
-  height: 25px;
+  height: 1.75rem;
   width: 60px;
-  font-weight: bold;
   background-color: #d8bec4;
   border-radius: 5px;
 }
-
 .displayContainer {
   padding-top: 20px;
   display: grid;
   grid-template-columns: 145px auto;
 }
-
 .favoritesContainer {
   border-right: 1px solid black;
-}
-
-.titleFavorites {
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.lisFavoritesSerie {
   display: flex;
   flex-direction: column;
-  list-style: none;
-  margin: 20px 18px 25px 24px;
-  width: 100px;
+  align-items: center;
 }
-
+.titleFavorites {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+.lisFavoritesSerie {
+  list-style: none;
+}
 .buttonDeleteFavorites {
   position: absolute;
   display: block;
   border-radius: 40%;
   background-color: #e7d4d9;
-  font-size: 8px;
   padding: 3px;
 }
-
 .imgFavoriteSeries {
   display: block;
   width: 100px;
   border: 1px solid rgb(197, 175, 158);
   border-radius: 5px;
 }
-
 .titleSerieFavorite {
   display: block;
   font-size: 0.8rem;
   text-align: center;
   margin-top: 2px;
 }
-
 .buttonResetFavorites {
-  height: 20px;
+  height: 25px;
   width: 45px;
-  margin-left: 18px;
-  margin-bottom: 20px;
-  margin-top: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #d8bec4;
   border-radius: 5px;
 }
-
-.searchContainer {
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
 .titleList {
-  margin-left: 14px;
-  font-size: 0.9rem;
+  text-align: center;
 }
-
 .ulContainerSeries {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.lisSerie {
-  list-style: none;
-  background-color: rgba(134, 89, 100, 0.75);
-  color: #c5da97;
-  margin-top: 20px;
-  margin-bottom: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
+.lisSerie,
 .liSelectedSerie {
   list-style: none;
-  background-color: rgba(74, 80, 61, 0.75);
-  color: #dfb6c1;
   margin-top: 20px;
   margin-bottom: 25px;
   display: flex;
@@ -153,17 +101,21 @@
   align-items: center;
   gap: 10px;
 }
-
+.lisSerie {
+  background-color: rgba(134, 89, 100, 0.75);
+  color: #c5da97;
+}
+.liSelectedSerie {
+  background-color: rgba(74, 80, 61, 0.75);
+  color: #dfb6c1;
+}
 .imgSeries {
   display: block;
   width: 100px;
-  padding-top: 10px;
 }
-
 .titleSeries {
   font-size: 1rem;
 }
-
 .footerContainer {
   border-top: 1px solid black;
   display: flex;
@@ -177,48 +129,19 @@
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
-
 @media (min-width: 768px) {
   .titleHeader {
     font-size: 2rem;
   }
-  .labelInput {
-    font-size: 20px;
-  }
-  .inputText {
-    height: 30px;
-    width: 580px;
-  }
-  .buttonSearch {
-    height: 30px;
-  }
   .displayContainer {
     grid-template-columns: 250px auto;
-  }
-  .favoritesContainer {
-    width: 250px;
-  }
-  .lisFavoritesSerie {
-    width: 150px;
-    margin-left: 50px;
-  }
-  .titleFavorites {
-    font-size: 1.5rem;
-  }
-  .buttonDeleteFavorites {
-    font-size: 12px;
   }
   .imgFavoriteSeries {
     width: 150px;
   }
-  .buttonResetFavorites {
-    height: 25px;
-    width: 60px;
-  }
   .ulContainerSeries {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10px;
   }
   .lisSerie {
     justify-self: center;
@@ -226,45 +149,10 @@
   .imgSeries {
     width: 120px;
   }
-  .titleList {
-    margin-left: 0;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  .titleFooter {
-    font-size: 1.5rem;
-  }
-  .copy {
-    font-size: 1.2rem;
-  }
 }
-
 @media (min-width: 1024px) {
-  .inputText {
-    width: 1750px;
-  }
   .displayContainer {
     grid-template-columns: 550px auto;
-  }
-  .titleFavorites {
-    font-size: 25px;
-    text-align: center;
-  }
-  .favoritesContainer {
-    width: 550px;
-  }
-  .ulFavoriteSeries {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .lisFavoritesSerie {
-    width: 200px;
-    margin-left: 0;
-    margin-right: 0;
-    justify-self: center;
-  }
-  .imgFavoriteSeries {
-    width: 200px;
   }
   .titleSerieFavorite {
     font-size: 1rem;
