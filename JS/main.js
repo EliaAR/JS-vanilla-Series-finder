@@ -54,7 +54,6 @@ function callToAPI() {
   fetch(`//api.tvmaze.com/search/shows?q=${inputText.value}`)
     .then((response) => response.json())
     .then((data) => {
-      let content = "";
       printSeries(data);
       APIResults.push({
         searchValue: inputText.value,

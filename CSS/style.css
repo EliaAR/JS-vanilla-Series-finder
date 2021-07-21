@@ -10,7 +10,7 @@
   border-bottom: 1px solid black;
   height: calc(10vh - 1px);
   color: rgba(255, 255, 255, 0.3);
-  background: #865964;
+  background: #442a2a;
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
     5px 5px 15px 5px rgb(0 0 0 / 0%);
   width: 100%;
@@ -27,14 +27,26 @@
 }
 
 .formContainer {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(197, 175, 158, 0.75);
+  background-color: rgba(217, 203, 192, 0.4);
+}
+
+.formSerie {
+  display: flex;
+  flex-direction: column;
+}
+.labelInput {
+  font-size: 15px;
+  width: 230px;
+  padding-bottom: 3px;
 }
 
 .inputText {
-  background: rgb(230, 223, 215);
+  background: rgb(248, 247, 245);
   border-radius: 5px;
-  width: 145px;
+  width: 185px;
+  height: 25px;
   margin-left: 5px;
 }
 
@@ -47,6 +59,7 @@
 }
 
 .displayContainer {
+  padding-top: 20px;
   display: grid;
   grid-template-columns: 145px auto;
 }
@@ -80,7 +93,8 @@
 .imgFavoriteSeries {
   display: block;
   width: 100px;
-  padding-top: 10px;
+  border: 1px solid rgb(197, 175, 158);
+  border-radius: 5px;
 }
 
 .titleSerieFavorite {
@@ -110,9 +124,15 @@
   font-size: 0.9rem;
 }
 
+.ulContainerSeries {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .lisSerie {
   list-style: none;
-  background-color: #865964;
+  background-color: rgba(134, 89, 100, 0.75);
   color: #c5da97;
   margin-top: 20px;
   margin-bottom: 25px;
@@ -124,7 +144,7 @@
 
 .liSelectedSerie {
   list-style: none;
-  background-color: #4a503d;
+  background-color: rgba(74, 80, 61, 0.75);
   color: #dfb6c1;
   margin-top: 20px;
   margin-bottom: 25px;
@@ -153,7 +173,7 @@
   height: calc(10vh - 1px);
   text-shadow: #e0e0e0 1px 1px 0, 2px 2px 2px rgba(206, 89, 55, 0);
   color: #878787;
-  background: #d8bec4;
+  background: #d9cbc0;
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
@@ -162,9 +182,15 @@
   .titleHeader {
     font-size: 2rem;
   }
+  .labelInput {
+    font-size: 20px;
+  }
   .inputText {
-    height: 25px;
-    width: 180px;
+    height: 30px;
+    width: 580px;
+  }
+  .buttonSearch {
+    height: 30px;
   }
   .displayContainer {
     grid-template-columns: 250px auto;
@@ -194,6 +220,12 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
   }
+  .lisSerie {
+    justify-self: center;
+  }
+  .imgSeries {
+    width: 120px;
+  }
   .titleList {
     margin-left: 0;
     font-size: 1.5rem;
@@ -209,7 +241,7 @@
 
 @media (min-width: 1024px) {
   .inputText {
-    width: 300px;
+    width: 1750px;
   }
   .displayContainer {
     grid-template-columns: 550px auto;

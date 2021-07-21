@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buscador de series</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./CSS/reset.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
@@ -14,13 +19,19 @@
     </header>
     <main class="mainContainer">
       <section class="formContainer">
-        <form method="get">
-          <input
-            type="text"
-            class="inputText js-inputText"
-            placeholder="Introduce una serie"
-          />
-          <button class="js-buttonSearch buttonSearch">Buscar</button>
+        <form class="formSerie">
+          <label for="serie" class="labelInput">Introduce una serie</label>
+          <div>
+            <input
+              id="serie"
+              type="text"
+              class="inputText js-inputText"
+              placeholder=" Ej: Rick and Morty"
+            />
+            <button class="js-buttonSearch buttonSearch">
+              <i class="fas fa-search"></i></button
+            >-
+          </div>
         </form>
       </section>
       <div class="displayContainer">
